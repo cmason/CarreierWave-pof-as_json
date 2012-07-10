@@ -12,7 +12,7 @@ gem "mini_magick"
 
 gem 'sqlite3'
 
-gem 'carrierwave'
+gem 'carrierwave', '~> 0.6.2'
 
 
 # Gems used only for assets and not required

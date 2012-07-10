@@ -130,7 +130,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  carrierwave
+  carrierwave (~> 0.6.2)
   coffee-rails (~> 3.2.1)
   jquery-rails
   mini_magick
