@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe User do
-  it "a file upload should only fill 1 mount uploader" do
+  it "avatar should be exported into the json" do
     u = User.new
     u.avatar = File.open(Rails.root + 'app/assets/images/rails.png')
     u.save!
