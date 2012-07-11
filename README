@@ -1,27 +1,27 @@
-== json export troubles with carrierwave 0.6.x
+## json export troubles with carrierwave 0.6.x
 
 When there are two mount_uploader into a model (see User),
 and we upload a file, it doesn't appear into the json.
 
 
-== Running tests
+## Running tests
 
 Run "rspec spec" in a terminal to see that there is a bug with the User model
 that doesn't exist with the UserWorking model.
 
-== The problem
+## The problem
 
 When we upload a file (like rails.png) in an instance of UserWorkin?
 
-irb(main):001:0>     u = UserWorking.new
-=> #<UserWorking id: nil, username: nil, avatar: nil, created_at: nil, updated_at: nil>
-irb(main):002:0>     u.avatar = File.open(Rails.root + 'app/assets/images/rails.png')
-=> #<File:/private/tmp/my-project/app/assets/images/rails.png>
-irb(main):003:0>     u.save!
-=> true
-irb(main):004:0> u.avatar
-=> /uploads/user_working/avatar/2/rails.png
-irb(main):005:0> u.as_json
-=> {"avatar"=>{"url"=>"/uploads/user_working/avatar/2/rails.png", :thumb=>{"url"=>"/uploads/user_working/avatar/2/thumb_rails.png"}}, "created_at"=>Tue, 10 Jul 2012 15:47:40 UTC +00:00, "id"=>2, "updated_at"=>Tue, 10 Jul 2012 15:47:40 UTC +00:00, "username"=>nil}
+> irb(main):001:0>     u = UserWorking.new
+> => #<UserWorking id: nil, username: nil, avatar: nil, created_at: nil, updated_at: nil>
+> irb(main):002:0>     u.avatar = File.open(Rails.root + 'app/assets/images/rails.png')
+> => #<File:/private/tmp/my-project/app/assets/images/rails.png>
+> irb(main):003:0>     u.save!
+> => true
+> irb(main):004:0> u.avatar
+> => /uploads/user_working/avatar/2/rails.png
+> irb(main):005:0> u.as_json
+> => {"avatar"=>{"url"=>"/uploads/user_working/avatar/2/rails.png", :thumb=>{"url"=>"/uploads/user_working/avatar/2/thumb_rails.png"}}, "created_at"=>Tue, 10 Jul 2012 15:47:40 UTC +00:00, "id"=>2, "updated_at"=>Tue, 10 Jul 2012 15:47:40 UTC +00:00, "username"=>nil}
 
 See _spec/models/user_spec.rb_ and _spec/models/user_working_spec.rb_ for details.
