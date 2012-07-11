@@ -13,11 +13,11 @@ that doesn't exist with the UserWorking model.
 
 When we upload a file (like rails.png) in an instance of UserWorking:
 
-> irb(main):001:0>     u = UserWorking.new
+> irb(main):001:0> u = UserWorking.new
 > => #<UserWorking id: nil, username: nil, avatar: nil, created_at: nil, updated_at: nil>
-> irb(main):002:0>     u.avatar = File.open(Rails.root + 'app/assets/images/rails.png')
+> irb(main):002:0> u.avatar = File.open(Rails.root + 'app/assets/images/rails.png')
 > => #<File:/private/tmp/my-project/app/assets/images/rails.png>
-> irb(main):003:0>     u.save!
+> irb(main):003:0> u.save!
 > => true
 > irb(main):004:0> u.avatar
 > => /uploads/user_working/avatar/2/rails.png
@@ -26,11 +26,11 @@ When we upload a file (like rails.png) in an instance of UserWorking:
 
 With an instance of User:
 
-> irb(main):001:0>  u = User.new
+> irb(main):001:0> u = User.new
 > => #<User id: nil, username: nil, avatar: nil, avatar2: nil, created_at: nil, updated_at: nil>
 > irb(main):002:0> u.avatar = File.open(Rails.root + 'app/assets/images/rails.png')
 > => #<File:/private/tmp/my-project/app/assets/images/rails.png>
-> irb(main):003:0>  u.save!
+> irb(main):003:0> u.save!
 > => true
 > irb(main):004:0> u.avatar
 > => /uploads/user/avatar/1/rails.png
